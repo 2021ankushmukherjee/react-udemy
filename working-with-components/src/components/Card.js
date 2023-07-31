@@ -1,12 +1,11 @@
 import { ExpenseItem } from "./ExpenseItem"
 import "./Card.css"
 
-export const Card = (probs)=>{
-    console.log(probs.className);
-
+export const Card = (probs) => {
+  
     const classes = 'card ' + probs.className;
 
-    return(
+    return (
         <div className={classes}>{probs.children}</div>
     )
 }
