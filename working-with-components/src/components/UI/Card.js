@@ -1,4 +1,3 @@
-import { ExpenseItem } from "./ExpenseItem"
 import "./Card.css"
 
 export const Card = (probs) => {
