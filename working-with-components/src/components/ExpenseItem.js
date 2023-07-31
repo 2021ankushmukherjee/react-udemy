@@ -1,12 +1,13 @@
 import "./ExpenseItem.css";
 
-export const ExpenseItem = () =>{
+export const ExpenseItem = (probs) => {
+
     return (
         <div className="expense-item">
-            <div className="">March 28th 2021</div>
+            <div className="">{probs.expenseDate}</div>
             <div className="expense-item__description">
-                <h2>Car Insurance</h2>
-                <div className="expense-item__price"> ₹ 294.67</div>
+                <h2>{probs.expenseTitle}</h2>
+                <div className="expense-item__price">₹{probs.expensePrice}</div>
             </div>
         </div>
     );
