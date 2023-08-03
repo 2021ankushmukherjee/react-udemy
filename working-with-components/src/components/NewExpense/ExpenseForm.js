@@ -3,21 +3,35 @@ import "./ExpenseForm.css"
 
 export const ExpenseForm = () => {
 
-    const [enteredTitle, setEnteredTitle] = useState("");
-    const [enteredAmount, setEnteredAmount] = useState("");
-    const [changeDate, setChangeDate] = useState("");
+    // const [enteredTitle, setEnteredTitle] = useState("");
+    // const [enteredAmount, setEnteredAmount] = useState("");
+    // const [changeDate, setChangeDate] = useState("");
 
+    const [userInput, setUserInput] = useState({
+        enteredTitle: "",
+        enteredAmount: "",
+        enteredDate: "",
+    })
 
     const titleChangeHandeler = (e) => {
-        setEnteredTitle(e.target.value)
+        setUserInput({
+            ...userInput,    //  copy all the key value pairs & add to this new objects
+            enteredTitle: e.target.value
+        })
     }
 
     const amountChangeHandeler = (e) => {
-        setEnteredAmount(e.target.value)
+        setUserInput({
+            ...userInput,
+            enteredAmount: e.target.value
+        })
     }
 
     const dateChangeHandeler = (e) => {
-        setChangeDate(e.target.value)
+        setUserInput({
+            ...userInput,
+            enteredDate: e.target.value
+        })
     }
 
     return (
