@@ -21,20 +21,36 @@ export const ExpenseForm = () => {
         }
     }
 
+    const submitHandeler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+
+        console.log(expenseData);
+
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    }
+
     return (
-        <form action="">
+        <form onSubmit={submitHandeler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" placeholder="Enter Expense Title" onChange={(e)=> inputChangeHandeler('title', e.target.value )} />
+                    <input type="text" placeholder="Enter Expense Title" value={enteredTitle} onChange={(e) => inputChangeHandeler('title', e.target.value)} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" placeholder="Enter Amount" min="0.01" step="0.01" onChange={(e)=> inputChangeHandeler('number', e.target.value )} />
+                    <input type="number" placeholder="Enter Amount" value={enteredAmount} min="0.01" step="0.01" onChange={(e) => inputChangeHandeler('number', e.target.value)} />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" onChange={(e)=> inputChangeHandeler('date', e.target.value )} />
+                    <input type="date" value={enteredDate} onChange={(e) => inputChangeHandeler('date', e.target.value)} />
                 </div>
             </div>
             <div className="new-expense__actions">
