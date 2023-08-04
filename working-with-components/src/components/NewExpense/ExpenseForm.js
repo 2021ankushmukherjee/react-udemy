@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css"
 
-export const ExpenseForm = () => {
+export const ExpenseForm = (probs) => {
 
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
@@ -31,6 +31,7 @@ export const ExpenseForm = () => {
         };
 
         console.log(expenseData);
+        probs.onSaveExpenseData(expenseData);
 
         setEnteredTitle('');
         setEnteredAmount('');
