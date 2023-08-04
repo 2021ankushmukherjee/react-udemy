@@ -1,19 +1,8 @@
-import { useState } from "react"
 import { Card } from "../UI/Card"
 import { ExpenseItem } from "./ExpenseItem"
 import "./Expenses.css"
 
 export const Expenses = (probs) => {
-
-    const [filteredYear, setFilteredYear] = useState('2020');
-
-    const filterChangeHandler = selectedYear =>{
-        setFilteredYear(selectedYear);
-    }
-
-        // this is develop
-
-
     console.log(probs.data)
     return (
         <Card className="expenses">
